@@ -5,6 +5,8 @@
 퀄리티 매우 떨어짐 ㅈㅅ
 
 포함되있는 글꼴을 설치해주셔야 글꼴 적용됩니다
+- netmarbleM
+- 
 
 
 'beautifulsoup, requests, qtpy, time'
