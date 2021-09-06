@@ -6,7 +6,7 @@
 
 포함되있는 글꼴을 설치해주셔야 글꼴 적용됩니다
 - netmarbleM
-- 
+- nanumgothic
 
 
 'beautifulsoup, requests, qtpy, time'
