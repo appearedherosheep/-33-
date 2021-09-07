@@ -11,14 +11,17 @@
 4. 오늘의 급식을 확인하세요!
 5. exe 파일을 드레그해서 작업표시줄 위에 놓으면 작업표시줄에 추가 됩니다
 
-'main.py'와 'app.py'는 코드입니다<br>
-참고해주세요
+<코드>
+코드입니다. 참고해주세요
+- main.py
+- app.py
 
+<글꼴>
 포함되있는 글꼴을 설치해주셔야 글꼴 적용됩니다
 - netmarbleM.ttf
 - NanumBarunGothic.ttf
 
-사용한 라이브러리
+<사용한 라이브러리>
 - beautifulsoup
 - requests
 - qtpy
