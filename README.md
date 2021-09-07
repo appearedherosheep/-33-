@@ -9,7 +9,7 @@
 
 포함되있는 글꼴을 설치해주셔야 글꼴 적용됩니다
 - netmarbleM.ttf
-- nanumgothic.ttf
+- NanumBarunGothic.ttf
 
 사용한 라이브러리
 - beautifulsoup
