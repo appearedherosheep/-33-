@@ -21,7 +21,8 @@
 - netmarbleM.ttf
 - NanumBarunGothic.ttf
 
-<사용한 라이브러리>
+<사용한 라이브러리><br>
+파이썬 기반임 
 - beautifulsoup
 - requests
 - qtpy
