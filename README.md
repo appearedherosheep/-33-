@@ -1,4 +1,4 @@
-# schoolmealCBSH33rd
+# SchoolLunchCBSH33rd
 <급식충곽33기>
 
 급식충인 충곽이를 위한 급식 알리미<br>
