@@ -11,6 +11,12 @@ def call_ymd():
     return year*10000+mon*100+day
 
 
+def call_yo1():
+    week = ['월', '화', '수', '목', '금', '토', '일']
+    day = localtime(time()).tm_wday
+    return week[day]
+
+
 def call_hmin():
     a = localtime(time())
     hour = a.tm_hour
@@ -56,17 +62,28 @@ def main_scraper(date):
     return menu
 
 
-def return_breakfast(date):
+def return_breakfast(date, yo1):
     li_menu = main_scraper(date)
     max_menu_num = len(li_menu)
     menu_breakfast = []
     menu_breakfast.append(f'{date}')
 
     if max_menu_num == 0:
-        menu_breakfast.append("업데이트 중...")
+        if yo1 == '토':
+            menu_breakfast.append("오늘은 토요일")
+        elif yo1 == '일':
+            menu_breakfast.append("오늘은 일요일")
+        else:
+            menu_breakfast.append("업데이트 중...")
+
+    elif max_menu_num == 1:
+        breakfast = li_menu[0].split()
+        extract_str(breakfast, menu_breakfast)
+
     elif max_menu_num == 2 or max_menu_num == 3:
         breakfast = li_menu[0].split()
         extract_str(breakfast, menu_breakfast)
+
     breakfast_list = ''
     for i in range(len(menu_breakfast)):
         breakfast_list = breakfast_list + '\n' + menu_breakfast[i]
@@ -74,14 +91,23 @@ def return_breakfast(date):
     return breakfast_list
 
 
-def return_lunch(date):
+def return_lunch(date, yo1):
     li_menu = main_scraper(date)
     max_menu_num = len(li_menu)
     menu_lunch = []
     menu_lunch.append(f'{date}')
 
     if max_menu_num == 0:
-        menu_lunch.append("업데이트 중...")
+        if yo1 == '토':
+            menu_lunch.append("오늘은 토요일")
+        elif yo1 == '일':
+            menu_lunch.append("오늘은 일요일")
+        else:
+            menu_lunch.append("업데이트 중...")
+
+    elif max_menu_num == 1:
+        lunch = li_menu[0].split()
+        extract_str(lunch, menu_lunch)
 
     elif max_menu_num == 2 or max_menu_num == 3:
         lunch = li_menu[1].split()
@@ -94,14 +120,23 @@ def return_lunch(date):
     return lunch_list
 
 
-def return_dinner(date):
+def return_dinner(date, yo1):
     li_menu = main_scraper(date)
     max_menu_num = len(li_menu)
     menu_dinner = []
     menu_dinner.append(f'{date}')
 
     if max_menu_num == 0:
-        menu_dinner.append("업데이트 중...")
+        if yo1 == '토':
+            menu_dinner.append("오늘은 토요일")
+        elif yo1 == '일':
+            menu_dinner.append("오늘은 일요일")
+        else:
+            menu_dinner.append("업데이트 중...")
+
+    elif max_menu_num == 1:
+        dinner = li_menu[0].split()
+        extract_str(dinner, menu_dinner)
 
     elif max_menu_num == 2 or max_menu_num == 1:
         menu_dinner.append("도시락 개꿀❤\n아님 말고~")
