@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QApplication, QPushButton, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QDesktopWidget, QCalendarWidget
 from PyQt5.QtCore import QDate
-from main import call_ymd, return_breakfast, return_lunch, return_dinner, pretty_date, call_hmin
+from main import call_ymd, call_yo1, return_breakfast, return_lunch, return_dinner, pretty_date, call_hmin
 
 
 class MyApp(QWidget):
@@ -34,7 +34,7 @@ class MyApp(QWidget):
         hbox.addWidget(self.lunch_btn)
         hbox.addWidget(self.dinner_btn)
 
-        breakfast_list = return_breakfast(call_ymd())
+        breakfast_list = return_breakfast(call_ymd(), call_yo1())
         self.breakfast = QLabel(breakfast_list, self)
         self.breakfast.setFixedSize(350, 350)
         self.breakfast.setFont(QFont('나눔바른고딕', 20))
@@ -47,7 +47,7 @@ class MyApp(QWidget):
             "background-color : white;"
         )
 
-        lunch_list = return_lunch(call_ymd())
+        lunch_list = return_lunch(call_ymd(), call_yo1())
         self.lunch = QLabel(lunch_list, self)
         self.lunch.setFixedSize(350, 350)
         self.lunch.setFont(QFont('나눔바른고딕', 20))
@@ -60,7 +60,7 @@ class MyApp(QWidget):
             "background-color : white;"
         )
 
-        dinner_list = return_dinner(call_ymd())
+        dinner_list = return_dinner(call_ymd(), call_yo1())
         self.dinner = QLabel(dinner_list, self)
         self.dinner.setFixedSize(350, 350)
         self.dinner.setFont(QFont('나눔바른고딕', 20))
@@ -140,22 +140,22 @@ class MyApp(QWidget):
         yo1, mon, day, year = date.split()
         ymd = int(year)*10000+int(mon)*100+int(day)
 
-        if yo1 == '토':
-            self.breakfast.setText('오늘 토요일ㅎ')
-            self.lunch.setText('오늘 토요일ㅎ')
-            self.dinner.setText('오늘 토요일ㅎ')
-        elif yo1 == '일':
-            self.breakfast.setText('오늘 일요일ㅠ')
-            self.lunch.setText('오늘 일요일ㅠ')
-            self.dinner.setText('오늘 일요일ㅠ')
-        else:
-            self.breakfast.setText(return_breakfast(ymd))
-            self.lunch.setText(return_lunch(ymd))
-            self.dinner.setText(return_dinner(ymd))
+        # if yo1 == '토':
+        #     self.breakfast.setText('오늘 토요일ㅎ')
+        #     self.lunch.setText('오늘 토요일ㅎ')
+        #     self.dinner.setText('오늘 토요일ㅎ')
+        # elif yo1 == '일':
+        #     self.breakfast.setText('오늘 일요일ㅠ')
+        #     self.lunch.setText('오늘 일요일ㅠ')
+        #     self.dinner.setText('오늘 일요일ㅠ')
+        # else:
+        self.breakfast.setText(return_breakfast(ymd, yo1))
+        self.lunch.setText(return_lunch(ymd, yo1))
+        self.dinner.setText(return_dinner(ymd, yo1))
 
-            self.breakfast.repaint()
-            self.lunch.repaint()
-            self.dinner.repaint()
+        self.breakfast.repaint()
+        self.lunch.repaint()
+        self.dinner.repaint()
 
 
 if __name__ == '__main__':
