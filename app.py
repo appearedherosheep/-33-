@@ -36,7 +36,9 @@ class MyApp(QWidget):
 
         breakfast_list = return_breakfast(call_ymd(), call_yo1())
         self.breakfast = QLabel(breakfast_list, self)
-        self.breakfast.setFixedSize(350, 350)
+        # self.breakfast.setFixedSize(350, 350)
+        self.breakfast.setFixedHeight(350)
+        self.breakfast.setMinimumWidth(350)
         self.breakfast.setFont(QFont('나눔바른고딕', 20))
         self.breakfast.setStyleSheet(
             "color : black;"
@@ -49,7 +51,10 @@ class MyApp(QWidget):
 
         lunch_list = return_lunch(call_ymd(), call_yo1())
         self.lunch = QLabel(lunch_list, self)
-        self.lunch.setFixedSize(350, 350)
+        # self.lunch.setFixedSize(350, 350)
+        self.lunch.setFixedHeight(350)
+        self.lunch.setMinimumWidth(350)
+
         self.lunch.setFont(QFont('나눔바른고딕', 20))
         self.lunch.setStyleSheet(
             "color : black;"
@@ -62,7 +67,10 @@ class MyApp(QWidget):
 
         dinner_list = return_dinner(call_ymd(), call_yo1())
         self.dinner = QLabel(dinner_list, self)
-        self.dinner.setFixedSize(350, 350)
+        # self.dinner.setFixedSize(350, 350)
+        self.dinner.setFixedHeight(350)
+        self.dinner.setMinimumWidth(350)
+
         self.dinner.setFont(QFont('나눔바른고딕', 20))
         self.dinner.setStyleSheet(
             "color : black;"
