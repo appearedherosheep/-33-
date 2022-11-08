@@ -43,9 +43,10 @@ def build_menu_list(li, list):
 
 def extract_str(menu, List):
     for a in range(1, len(menu)):
-        string = menu[a].split('.')
+        string = menu[a].split('(')
         string = string[0]
         string = ''.join([i for i in string if not i.isdigit()])
+        string = string.replace(' ', '')
         List.append(string)
 
 

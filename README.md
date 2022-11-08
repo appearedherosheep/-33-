@@ -21,10 +21,14 @@
 - netmarbleM.ttf
 - NanumBarunGothic.ttf
 
+<pyinstaller><br>
+- pyinstaller -F -w --icon=./ main.py
+
 <사용한 라이브러리><br>
-파이썬 기반임 
+파이썬 기반
 - beautifulsoup
 - requests
 - qtpy
 - time
 - sys
+- pyinstaller
